@@ -1112,7 +1112,11 @@ EXTRA_CFLAGS += -DPLATFORM_LINUX
 SUBARCH := $(shell uname -m | sed -e s/i.86/i386/)
 ARCH ?= $(SUBARCH)
 CROSS_COMPILE ?=
-KVER  := $(shell uname -r)
+
+##KVER  := $(shell uname -r)
+## Manual kernel release definition
+KVER  := 4.19.66-v7+
+
 KSRC := /lib/modules/$(KVER)/build
 MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 INSTALL_PREFIX :=
@@ -1124,7 +1128,11 @@ EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
 EXTRA_CFLAGS += -DPLATFORM_LINUX
 ARCH ?= arm
 CROSS_COMPILE ?=
-KVER ?= $(shell uname -r)
+
+##KVER ?= $(shell uname -r)
+## Manual kernel release definition
+KVER ?= 4.19.66-v7+
+
 KSRC := /lib/modules/$(KVER)/build
 MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 INSTALL_PREFIX :=
